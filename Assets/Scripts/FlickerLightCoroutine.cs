@@ -5,7 +5,7 @@ using UnityEngine;
 public class FlickerLightCoroutine : MonoBehaviour
 {
     public Light _lamp;
-    [SerializeField] private int _randomSeconds;
+    [SerializeField] private float _randomSeconds;
     [SerializeField] private int _randomIntensity;
     public bool _isFlickered = false;
 
@@ -16,7 +16,7 @@ public class FlickerLightCoroutine : MonoBehaviour
     }
 
     IEnumerator Flicker() {
-        _randomSeconds = Random.Range(1, 10);
+        _randomSeconds = Random.Range(0.05f, 0.5f);
         _randomIntensity = Random.Range(2, 10);
 
         yield return new WaitForSeconds(_randomSeconds);
