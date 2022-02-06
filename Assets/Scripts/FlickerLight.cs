@@ -17,10 +17,10 @@ public class FlickerLight : MonoBehaviour
     }
 
     async void Flicker() {
-        _randomSeconds = Random.Range(1, 10);
+        _randomSeconds = Random.Range(50, 500) * 60;
         _randomIntensity = Random.Range(2, 10);
 
-        await Task.Delay(_randomSeconds * 8000);
+        await Task.Delay(_randomSeconds);
         _lamp.intensity = _randomIntensity;
     }
 }
